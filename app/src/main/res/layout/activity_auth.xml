@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AuthActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/phone_fields">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:textSize="15sp"
+            android:layout_margin="40dp"
+            android:text="@string/auth"
+            android:id="@+id/title"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:padding="10dp"
+            android:id="@+id/linear"
+            android:layout_below="@+id/title">
+
+            <com.hbb20.CountryCodePicker
+                android:id="@+id/ccp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:ccp_autoDetectCountry="true"
+                android:layout_marginTop="18dp"
+                app:ccp_showNameCode="false" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/layout">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:background="#ffffff"
+                    android:inputType="phone"
+                    android:id="@+id/phone"
+                    android:gravity="center"
+                    android:digits="0123456789"
+                    android:maxLength="9"
+                    android:layout_height="wrap_content"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_signup"
+            android:layout_margin="20dp"
+            android:layout_below="@+id/linear"
+            android:layout_centerHorizontal="true"
+            android:textAllCaps="false"
+            android:text="@string/signup"/>
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:id="@+id/code_fields">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:gravity="center"
+            android:id="@+id/instruction"
+            android:layout_margin="20dp"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:layout_below="@+id/instruction"
+            android:layout_centerHorizontal="true"
+            android:hint="code"
+            android:id="@+id/code_layout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:background="#ffffff"
+                android:inputType="phone"
+                android:id="@+id/code"
+                android:gravity="center"
+                android:digits="0123456789"
+                android:maxLength="6"
+                android:layout_height="wrap_content"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_code"
+            android:layout_margin="20dp"
+            android:layout_below="@+id/code_layout"
+            android:layout_centerHorizontal="true"
+            android:textAllCaps="false"
+            android:text="@string/submit"/>
+
+
+    </RelativeLayout>
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:scaleY="4"
+        android:visibility="invisible"
+        android:indeterminateTint="@color/colorPrimary"
+        android:indeterminateBehavior="repeat"
+        android:indeterminate="true" />
+
+</RelativeLayout>
